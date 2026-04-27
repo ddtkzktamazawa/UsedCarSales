@@ -34,7 +34,8 @@ public class Question7_25 {
 				//cloneArray[i]にarrayNumber[i]を代入する
 				cloneArray[i] = arrayNumber[i];
 				//cloneArrayを返却する
-			}return cloneArray;
+			}
+			return cloneArray;
 		}
 		//もしidxNumber+certainElementsがarrayNumberより大きい場合
 		if (idxNumber + certainElements > arrayNumber.length) {
