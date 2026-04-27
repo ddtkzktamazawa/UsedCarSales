@@ -33,8 +33,8 @@ public class Question7_25 {
 			for (int i = 0; i < arrayNumber.length; i++) {
 				//cloneArray[i]にarrayNumber[i]を代入する
 				cloneArray[i] = arrayNumber[i];
-				//cloneArrayを返却する
 			}
+			//cloneArrayを返却する
 			return cloneArray;
 		}
 		//もしidxNumber+certainElementsがarrayNumberより大きい場合
