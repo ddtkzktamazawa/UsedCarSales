@@ -21,24 +21,26 @@ public class Question7_25 {
 	 */
 	public static int[] arrayRmvOfN(final int[] arrayNumber, final int idxNumber, int certainElements) {
 		//もし各配列数がnullの場合
-		if (arrayNumber == null)
+		if (arrayNumber == null) {
 			//返却する
 			return null;
+		}
 		//もしcertainElementsが0以下、またはidxNumberが0より小さい、またはidxNumberがarrayNumber以上の場合
 		if (certainElements <= 0 || idxNumber < 0 || idxNumber >= arrayNumber.length) {
 			//指定された要素数で配列を作成する
 			int[] cloneArray = new int[arrayNumber.length];
 			//変数iが0から始めて1ずつ増やしていき要素の数繰り返す
-			for (int i = 0; i < arrayNumber.length; i++)
+			for (int i = 0; i < arrayNumber.length; i++) {
 				//cloneArray[i]にarrayNumber[i]を代入する
 				cloneArray[i] = arrayNumber[i];
-			//cloneArrayを返却する
-			return cloneArray;
+				//cloneArrayを返却する
+			}return cloneArray;
 		}
-		//もしidxNumber+certainElementsがarrayNumberより小さい場合
-		if (idxNumber + certainElements > arrayNumber.length)
+		//もしidxNumber+certainElementsがarrayNumberより大きい場合
+		if (idxNumber + certainElements > arrayNumber.length) {
 			//certainElementsにarrayNumber-idxNumberを代入する
 			certainElements = arrayNumber.length - idxNumber;
+		}
 		//指定された要素数で配列を作成する
 		int[] resultValue = new int[arrayNumber.length - certainElements];
 		//変数certainValueを初期化する
