@@ -57,8 +57,8 @@ public class Question7_33 {
 			}
 			//変数jが0から始めて1ずつ増やしていき要素の数繰り返す
 			for (int j = 0; j < arrayNumber[i].length; j++) {
-				//左詰めで10桁分の幅を確保してarrayNumber[i][j]を表示する（数字の先頭を縦に揃える）
-				System.out.printf("%-10d", arrayNumber[i][j]);
+				//左詰めで11桁分の幅を確保してarrayNumber[i][j]を表示する（数字の先頭を縦に揃える）
+				System.out.printf("%-11d", arrayNumber[i][j]);
 			}
 			//改行する
 			System.out.println();
