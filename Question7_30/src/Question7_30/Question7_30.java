@@ -36,13 +36,15 @@ public class Question7_30 {
 		//変数minimunNumberにcompareValue1を代入する
 		int minimunNumber = compareValue1;
 		//もしcompareValue2がminimunNumberより小さい場合
-		if (compareValue2 < minimunNumber) 
+		if (compareValue2 < minimunNumber) {
 			//minimunNumberにcompareValue2を代入する
 			minimunNumber = compareValue2;
+		}
 		//もしcompareValue3がminimunNumberより小さい場合
-		if (compareValue3 < minimunNumber) 
+		if (compareValue3 < minimunNumber) {
 			//minimunNumberにcompareValue3を代入する
 			minimunNumber = compareValue3;
+		}
 		//minimunNumberを返却する
 		return minimunNumber;
 	}
