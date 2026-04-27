@@ -29,7 +29,7 @@ public class Question7_26 {
 			return null;
 		}
 
-		//もしidxNumberが0より小さい、またはidxNumberがarrayNumber以上の場合
+		//もしidxNumberが0より小さい、またはidxNumberがarrayNumberより大きい場合
 		if (idxNumber < 0 || idxNumber > arrayNumber.length) {
 			//指定された要素数で配列を作成する
 			int[] cloneArray = new int[arrayNumber.length];
