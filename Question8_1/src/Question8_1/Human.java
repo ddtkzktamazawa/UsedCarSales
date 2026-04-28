@@ -6,12 +6,12 @@ package Question8_1;
  * 作成日            : 2026.4.28
  */
 public class Human {
-	//名前の情報
-	private String nameInformation;
-	//身長の情報
-	private double heightInformation;
-	//体重の情報
-	private double weightInformation;
+	//名前の情報の初期化
+	private String nameInformation = null;
+	//身長の情報の初期化
+	private double heightInformation = 0;
+	//体重の情報の初期化
+	private double weightInformation = 0;
 	/**
 	 * コンストラクタ         : Human
 	 * コンストラクタの説明   : 名前・身長・体重を初期化してインスタンスを生成する
