@@ -1,10 +1,25 @@
 package Question8_2;
 import java.util.Scanner;
-
+/*
+ * クラス名          : Question8_2
+ * 概要              : Carクラスのインスタンスを生成しユーザー入力に応じて
+ * 					   車の移動シミュレーションを行う
+ * 作成者            : 玉澤一輝
+ * 作成日            : 2026.04.28
+ */
 public class Question8_2 {
 	//キーボードで入力した値を入れる変数を作る（プログラム全体で使用し外部から書き換えられない）
 	private static final Scanner STANDARD_INPUT = new Scanner(System.in);
-
+	/**
+	 * 関数名           : main
+	 * メソッドの説明   : Carクラスのインスタンスを生成しユーザーからの
+	 * 					　移動距離入力に基づいて移動シミュレーションを繰り返す
+	 * 					　燃料不足時はメッセージを表示し、プログラムを終了する。
+	 * パラメータの説明 : なし
+	 * 返り値           : なし
+	 * 作成者           : 玉澤一輝
+	 * 作成日           : 2026.04.28
+	 */
 	public static void main(String[] args) {
 		//変数porscheCarに入力したデータを読み込む
 		Car porscheCar = new Car("ポルシェ", 1900, 1300, 4500, 0, 0, 64, 1234);
