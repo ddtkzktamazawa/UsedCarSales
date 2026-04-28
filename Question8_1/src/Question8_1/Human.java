@@ -13,12 +13,12 @@ public class Human {
 	//体重の情報
 	private double weightInformation;
 	/**
-	 * コンストラクタ   : Human
-	 * メソッドの説明   : 名前・身長・体重を初期化してインスタンスを生成する
-	 * パラメータの説明 : 名前、身長、体重
-	 * 返り値			: なし
-	 * 作成者           : 玉澤一輝
-	 * 作成日           : 2026.4.28
+	 * コンストラクタ         : Human
+	 * コンストラクタの説明   : 名前・身長・体重を初期化してインスタンスを生成する
+	 * パラメータの説明       : 名前、身長、体重
+	 * 返り値			      : なし
+	 * 作成者                 : 玉澤一輝
+	 * 作成日                 : 2026.4.28
 	 */
 	public Human(String nameInformation, double heightInformation, double weightInformation) {
 		//インスタンスの変数に代入する
@@ -77,6 +77,13 @@ public class Human {
 	 * 作成日           : 2026.4.28
 	 */
 	public void printProfile() {
+		//もし名前がnullと一致、または身長、体重が0以下の場合
+		if (nameInformation == null || heightInformation <= 0 || weightInformation <= 0) {
+			// プログラムを終了して不正な配列作成をしない
+			System.out.println("データが不完全なため、プロフィールを表示できません。");
+			//返却する
+			return;
+		}
 		//"名前：(nameInformation)"を表示して改行する
 		System.out.println("名前：" + nameInformation);
 		//"身長：(heightInformation)cm"を表示して改行する
