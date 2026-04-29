@@ -72,14 +72,14 @@ public class Human2 {
 		return weightInformation;
 	}
 	/**
-	 * 関数名           : getBirthday
+	 * 関数名           : getBirthDay
 	 * メソッドの説明   : 誕生日のフィールド値を返却する
 	 * パラメータの説明 : なし
 	 * 返り値           : 誕生日
 	 * 作成者           : 玉澤一輝
 	 * 作成日           : 2026.4.29
 	 */
-	public Day3 getBirthday() {
+	public Day3 getBirthDay() {
 		//誕生日を返却する
 		return new Day3 (birthdayInformation);
 	}
