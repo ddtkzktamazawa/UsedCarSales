@@ -15,7 +15,7 @@ public class Human2 {
 	//誕生日の情報の初期化
 	private Day3 birthdayInformation;
 	/**
-	 * コンストラクタ         : Human
+	 * コンストラクタ         : Human2
 	 * コンストラクタの説明   : 名前・身長・体重を初期化してインスタンスを生成する
 	 * パラメータの説明       : 名前、身長、体重
 	 * 返り値			      : なし
@@ -72,14 +72,14 @@ public class Human2 {
 		return weightInformation;
 	}
 	/**
-	 * 関数名           : getbirthday
+	 * 関数名           : getBirthday
 	 * メソッドの説明   : 誕生日のフィールド値を返却する
 	 * パラメータの説明 : なし
 	 * 返り値           : 誕生日
 	 * 作成者           : 玉澤一輝
 	 * 作成日           : 2026.4.29
 	 */
-	public Day3 getbirthday() {
+	public Day3 getBirthday() {
 		//誕生日を返却する
 		return new Day3 (birthdayInformation);
 	}
