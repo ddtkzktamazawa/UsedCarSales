@@ -17,7 +17,7 @@ public class Question9_3 {
 	 * 作成日           : 2026.04.29
 	 */
 	public static void main(String[] args) {
-		//変数birthDay1にインスタンスを生成して代入
+		//変数mrAdachiにインスタンスを生成して代入
 		Day2 birthDay1 = new Day2(2026, 4, 29);
 		//変数birthDay2にインスタンスを生成して代入
 		Day2 birthDay2 = new Day2(2026, 4, 22);
