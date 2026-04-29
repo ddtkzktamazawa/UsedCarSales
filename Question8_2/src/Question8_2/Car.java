@@ -95,7 +95,7 @@ public class Car {
 	}
 
 	/**
-	 * 関数名           : getweigth
+	 * 関数名           : getlength
 	 * メソッドの説明   : 長さのフィールド値を返却する
 	 * パラメータの説明 : なし
 	 * 返り値           : 長さ
