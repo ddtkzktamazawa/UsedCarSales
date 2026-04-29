@@ -13,7 +13,7 @@ public class Human2 {
 	//体重の情報の初期化
 	private double weightInformation = 0;
 	//誕生日の情報の初期化
-	private String birthdayInformation = null;
+	private Day3 birthdayInformation;
 	/**
 	 * コンストラクタ         : Human
 	 * コンストラクタの説明   : 名前・身長・体重を初期化してインスタンスを生成する
@@ -22,7 +22,7 @@ public class Human2 {
 	 * 作成者                 : 玉澤一輝
 	 * 作成日                 : 2026.4.29
 	 */
-	public Human2(String nameInformation, double heightInformation, double weightInformation, String birthdayInformation) {
+	public Human2(String nameInformation, double heightInformation, double weightInformation, Day3 birthdayInformation) {
 		//インスタンスの変数に代入する
 		this.nameInformation = nameInformation;
 		//インスタンスの変数に代入する
@@ -30,7 +30,7 @@ public class Human2 {
 		//インスタンスの変数に代入する
 		this.weightInformation = weightInformation;
 		//インスタンスの変数に代入する
-		this.birthdayInformation = birthdayInformation;
+		this.birthdayInformation = new Day3(birthdayInformation);
 	}
 
 	/**
@@ -79,9 +79,9 @@ public class Human2 {
 	 * 作成者           : 玉澤一輝
 	 * 作成日           : 2026.4.29
 	 */
-	public String getbirthday() {
+	public Day3 getbirthday() {
 		//誕生日を返却する
-		return birthdayInformation;
+		return new Day3 (birthdayInformation);
 	}
 	/**
 	 * 関数名           : toString

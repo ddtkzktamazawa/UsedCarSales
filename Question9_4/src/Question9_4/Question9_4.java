@@ -17,16 +17,26 @@ public class Question9_4 {
 	 * 作成日           : 2026.4.28
 	 */
 	public static void main(String[] args) {
+		//変数birthDay1にインスタンスを生成して代入
+		Day3 birthDay1 = new Day3(2003, 4, 7);
+		//変数birthDay2にインスタンスを生成して代入
+		Day3 birthDay2 = new Day3(2003, 11, 6);
+		//変数birthDay3にインスタンスを生成して代入
+		Day3 birthDay3 = new Day3(2003, 8, 2);
+		//変数birthDay4にインスタンスを生成して代入
+		Day3 birthDay4 = new Day3(2003, 1, 22);
+		//変数birthDay5にインスタンスを生成して代入
+		Day3 birthDay5 = new Day3(2003, 9, 10);
 		//変数firstPersonに入力したデータを読み込む
-		Human2 firstPerson = new Human2("佐藤", 173.5, 63.1, "2003/04/07");
+		Human2 firstPerson = new Human2("佐藤", 173.5, 63.1, birthDay1);
 		//変数secondPersonに入力したデータを読み込む
-		Human2 secondPerson = new Human2("鈴木", 182.2, 68.5, "2003/11/16");
+		Human2 secondPerson = new Human2("鈴木", 182.2, 68.5, birthDay2);
 		//変数thirdPersonに入力したデータを読み込む
-		Human2 thirdPerson = new Human2("高橋", 179.1, 59.8, "2003/08/02");
+		Human2 thirdPerson = new Human2("高橋", 179.1, 59.8, birthDay3);
 		//変数forthPersonに入力したデータを読み込む
-		Human2 forthPerson = new Human2("田中", 181.1, 65.4, "2003/01/22");
+		Human2 forthPerson = new Human2("田中", 181.1, 65.4, birthDay4);
 		//変数fifthPersonに入力したデータを読み込む
-		Human2 fifthPerson = new Human2("伊藤", 175.7, 57.3, "2003/09/10");
+		Human2 fifthPerson = new Human2("伊藤", 175.7, 57.3, birthDay5);
 
 		//"--- 1人目のプロフィール ---"を表示して改行する
 		System.out.println("--- 1人目のプロフィール ---");
