@@ -13,7 +13,7 @@ public class Account {
 	//預金残高の初期化
 	private long balanceInformation = 0;
 	//口座開設日の初期化
-	private String openDate = null;
+	private Day2 openDate;
 
 	/**
 	 * コンストラクタ  		  : Account
@@ -23,7 +23,7 @@ public class Account {
 	 * 作成者                 : 玉澤一輝
 	 * 作成日                 : 2026.4.29
 	 */
-	public Account(String nameInformation, String noInformation, long balanceInformation, String openDate) {
+	public Account(String nameInformation, String noInformation, long balanceInformation, Day2 openDate) {
 		//インスタンスの変数に代入する
 		this.nameInformation = nameInformation;
 		//インスタンスの変数に代入する
@@ -31,7 +31,7 @@ public class Account {
 		//インスタンスの変数に代入する
 		this.balanceInformation = balanceInformation;
 		//インスタンスの変数に代入する
-		this.openDate = openDate;
+		this.openDate = new Day2(openDate);
 	}
 	/**
 	 * 関数名           : getName
@@ -77,9 +77,9 @@ public class Account {
 	 * 作成者           : 玉澤一輝
 	 * 作成日           : 2026.4.29
 	 */
-	public String getOpenDate() {
+	public Day2 getopenDate() {
 		//口座開設日を返却する
-		return openDate;
+		return new Day2(openDate);
 	}
 	/**
 	 * 関数名           : deposit

@@ -17,10 +17,14 @@ public class Question9_3 {
 	 * 作成日           : 2026.04.29
 	 */
 	public static void main(String[] args) {
+		//変数birthDay1にインスタンスを生成して代入
+		Day2 birthDay1 = new Day2(2026, 4, 29);
+		//変数birthDay2にインスタンスを生成して代入
+		Day2 birthDay2 = new Day2(2026, 4, 22);
 		//変数mrAdachiにインスタンスを生成して代入
-		Account mrAdachi = new Account("足立幸一", "123456", 1000, "2026/04/29");
+		Account mrAdachi = new Account("足立幸一", "123456", 1000, birthDay1);
 		//変数mrNakataにインスタンスを生成して代入
-		Account mrNakata = new Account("中田真二", "654321", 200, "2026/04/22");
+		Account mrNakata = new Account("中田真二", "654321", 200, birthDay2);
 		//足立君の口座から200円おろす
 		mrAdachi.withdraw(200);
 		//中田君の口座に100円預ける
@@ -35,11 +39,11 @@ public class Question9_3 {
 		//"預金残高：mrAdachi.getBalance"を表示して改行する
 		System.out.println("預金残高　：" + mrAdachi.getBalance());
 		//"口座開設日：mrAdachi.getOpenDate"を表示して改行する
-		System.out.println("口座開設日：" + mrAdachi.getOpenDate());
+		System.out.println("口座開設日：" + mrAdachi.getopenDate());
 
 		//改行する
 		System.out.println();
-		
+
 		//"■中田君の口座"を表示して改行する
 		System.out.println("■中田君の口座");
 		//"口座名義：mrNakata.getName"を表示して改行する
@@ -49,6 +53,6 @@ public class Question9_3 {
 		//"預金残高：mrNakata.getBalance"を表示して改行する
 		System.out.println("預金残高　：" + mrNakata.getBalance());
 		//"口座開設日：mrNakata.getOpenDate"を表示して改行する
-		System.out.println("口座開設日：" + mrNakata.getOpenDate());
+		System.out.println("口座開設日：" + mrNakata.getopenDate());
 	}
 }
