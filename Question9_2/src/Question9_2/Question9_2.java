@@ -31,7 +31,7 @@ public class Question9_2 {
 		System.out.println("d3 (2026年4月)     : " + dayNumber3);
 		//変数dayNumber4にインスタンスを生成して代入
 		Day dayNumber4 = new Day(2026, 4, 29);
-		//"d4(2026年4月29日):dayNumber5"を表示して改行する
+		//"d4(2026年4月29日):dayNumber4"を表示して改行する
 		System.out.println("d4 (2026年4月29日) : " + dayNumber4);
 		//変数dayNumber5にインスタンスを生成して代入
 		Day dayNumber5 = new Day(dayNumber4);
