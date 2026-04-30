@@ -24,12 +24,12 @@ public class IdTester {
 		System.out.println("aの識別番号：" + identificationNumber1.getId());
 		//"bの識別番号：identificationNumber2.getId()"を表示して改行する
 		System.out.println("bの識別番号：" + identificationNumber2.getId());
-		//"Id.counter = (今までの識別番号)"を表示して改行する
-		System.out.println("Id.counter = " + Id.counter);
-		//"a.counter  = identificationNumber1.counter"を表示して改行する
-		System.out.println("a.counter  = " + identificationNumber1.counter);
-		//"b.counter  = identificationNumber2.counter"を表示して改行する
-		System.out.println("b.counter  = " + identificationNumber2.counter);
+		//"Id.counterValue = (今までの識別番号)"を表示して改行する
+		System.out.println("Id.counterValue = " + Id.counterValue);
+		//"a.counterValue  = identificationNumber1.counterValue"を表示して改行する
+		System.out.println("a.counterValue  = " + identificationNumber1.counterValue);
+		//"b.counterValue  = identificationNumber2.counterValue"を表示して改行する
+		System.out.println("b.counterValue  = " + identificationNumber2.counterValue);
 		//"最後に与えた識別番号：Id.getMaxId()"を表示して改行する
 		System.out.println("最後に与えた識別番号：" + Id.getMaxId());
 
@@ -44,12 +44,12 @@ public class IdTester {
 		System.out.println("cの識別番号：" + identificationNumber3.getId());
 		//"dの識別番号：identificationNumber4.getId()"を表示して改行する
 		System.out.println("dの識別番号：" + identificationNumber4.getId());
-		//"Id.counter = (今までの識別番号)"を表示して改行する
-		System.out.println("Id.counter = " + Id.counter);
-		//"c.counter  = identificationNumber3.counter"を表示して改行する
-		System.out.println("c.counter  = " + identificationNumber3.counter);
-		//"d.counter  = identificationNumber4.counter"を表示して改行する
-		System.out.println("d.counter  = " + identificationNumber4.counter);
+		//"Id.counterValue = (今までの識別番号)"を表示して改行する
+		System.out.println("Id.counterValue = " + Id.counterValue);
+		//"c.counterValue  = identificationNumber3.counterValue"を表示して改行する
+		System.out.println("c.counterValue  = " + identificationNumber3.counterValue);
+		//"d.counterValue  = identificationNumber4.counterValue"を表示して改行する
+		System.out.println("d.counterValue  = " + identificationNumber4.counterValue);
 		//"最後に与えた識別番号：Id.getMaxId()"を表示して改行する
 		System.out.println("最後に与えた識別番号：" + Id.getMaxId());
 

@@ -8,7 +8,7 @@ package Question10_1;
  */
 public class Id {
 	//何番までの識別番号を与えたかを記録する
-	static int counter = 0;
+	static int counterValue = 0;
 	//個々のインスタンスが持つ識別番号
 	private int idNumber;
 	/**
@@ -21,8 +21,8 @@ public class Id {
 	 * 作成日           : 2026.4.30
 	 */
 	public Id() {
-		//idNumberにcounterを代入してインクリメント
-		idNumber = ++counter;
+		//idNumberにcounterValueを代入してインクリメント
+		idNumber = ++counterValue;
 	}
 	/**
 	 * 関数名           : getId
@@ -46,7 +46,7 @@ public class Id {
 	 */
 	public static int getMaxId() {
 		//最後に与えた識別番号を返却
-		return counter;
+		return counterValue;
 	}
 }
 
