@@ -10,7 +10,7 @@ public class Id {
 	//何番までの識別番号を与えたかを記録する
 	static int counterValue = 0;
 	//個々のインスタンスが持つ識別番号
-	private int idNumber;
+	private int idNumber = 0;
 	/**
 	 * コンストラクタ  　　　 : Id
 	 * コンストラクタの説明   : インスタンス生成時にカウンターをインクリメントし
