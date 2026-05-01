@@ -1,7 +1,7 @@
 package Question9_5;
 
 /*
- * クラス名          : Day
+ * クラス名          : Day4
  * 概要              : 日付情報を管理し曜日計算や文字列表現の提供を行うクラス
  * 					　 5種類のコンストラクタによる初期化とカプセル化（ゲッタ・セッタ）を
  * 					　 実装している
@@ -9,6 +9,9 @@ package Question9_5;
  * 作成日            : 2026.04.29
  */
 public class Day4 {
+	// インデックス調整用の定数OFFSET（1）
+	private static final int OFFSET = 1;
+
 	//年の初期化
 	private int yearNumber = 1;
 	//月の初期化
@@ -42,9 +45,15 @@ public class Day4 {
 		//年月指定のコンストラクタを呼び出して処理
 		this(year, month); this.dateNumber = date;
 	}
-	//別のインスタンスを受け取って自身の値としてコピー
+	/**
+	 * コンストラクタ         : Day4
+	 * コンストラクタの説明   : 他のDay4インスタンスを基に複製を作成する
+	 * パラメータ             : d
+	 * 返り値                 : なし
+	 * 作成者                 : 玉澤一輝
+	 * 作成日                 : 2026.5.1
+	 */
 	public Day4(Day4 d) {
-		//年月日指定のコンストラクタを呼び出して複製
 		this(d.yearNumber, d.monthNumber, d.dateNumber);
 	}
 	/**
@@ -169,6 +178,129 @@ public class Day4 {
 	public boolean equalTo(Day4 d) {
 		//年、月、日がすべて等しいか判定した結果を返す
 		return yearNumber == d.yearNumber && monthNumber == d.monthNumber && dateNumber == d.dateNumber;
+	}
+	/**
+	 * 関数名           : compareTo
+	 * メソッドの説明   : 他の日付との前後関係を判定する
+	 * パラメータ       : 比較対象の日付
+	 * 返り値           : 前なら-1、同じなら0、後なら1
+	 * 作成者           : 玉澤一輝
+	 * 作成日           : 2026.5.1
+	 */
+	public int compareTo(Day4 oneDay) {
+		//yearNumberがoneDay.yearNumberより小さい場合
+		if (yearNumber < oneDay.yearNumber) {
+			//-1を返却
+			return -1;
+			//yearNumberがoneDay.yearNumberより大きい場合
+		}else if (yearNumber > oneDay.yearNumber) { 
+			//1を返却
+			return 1;
+		}
+		//monthNumberがoneDay.monthNumberより小さい場合
+		if (monthNumber < oneDay.monthNumber) {
+			//-1を返却
+			return -1;
+			//monthNumberがoneDay.monthNumberより大きい場合
+		}else if (monthNumber > oneDay.monthNumber) { 
+			//1を返却
+			return 1;
+		}
+		//dateNumberがoneDay.dateNumberより小さい場合
+		if (dateNumber < oneDay.dateNumber) { 
+			//-1を返却
+			return -1;
+			//dateNumberがoneDay.dateNumberより大きい場合
+		}else if (dateNumber > oneDay.dateNumber) {
+			//1を返却
+			return 1;
+		}
+		//0を返却
+		return 0;
+	}
+	/**
+	 * 関数名           : compare
+	 * メソッドの説明   : 二つの日付の前後関係を判定する
+	 * パラメータ       : oneDay1, oneDay2
+	 * 返り値           : oneDay1がoneDay2より前なら-1、同じなら0、後なら1
+	 * 作成者           : 玉澤一輝
+	 * 作成日           : 2026.5.1
+	 */
+	public static int compare(Day4 oneDay1, Day4 oneDay2) {
+		//compareToメソッドを呼び出して二つの日付を比較した結果を返す
+		return oneDay1.compareTo(oneDay2);
+	}
+	/**
+	 * 関数名           : lastDayOfMonth
+	 * メソッドの説明   : 指定された年月が何日まであるかを返却する
+	 * パラメータ       : year（年）、month（月）
+	 * 返り値           : その月の日数（28〜31）
+	 * 作成者           : 玉澤一輝
+	 * 作成日           : 2026.5.1
+	 */
+	public static int lastDayOfMonth(int year, int month) {
+		//もしmonthが1より小さい、monrhが12より大きい場合
+		if (month < 1 || month > 12) {
+			//31を返却
+			return 31;
+		}
+		//もしmonthが2と一致、かつisLeap(year)の場合
+		if (month == 2 && isLeap(year)) {
+			//29を返却
+			return 29;
+		}
+		//dummyDays[month-1]を返却
+		return dummyDays[month - OFFSET];
+	}
+	/**
+	 * フィールド名     : dummyDays
+	 * フィールドの説明 : 各月の日数を格納する配列（1月〜12月）
+	 * 作成者           : 玉澤一輝
+	 * 作成日           : 2026.5.1
+	 */
+	private static int[] dummyDays = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+	/**
+	 * 関数名           : isLeap
+	 * メソッドの説明   : 引数で受け取った年がうるう年かどうかを判定する（クラスメソッド）
+	 * パラメータ       : year
+	 * 返り値           : うるう年ならtrue、うるう年でなければfalse
+	 * 作成者           : 玉澤一輝
+	 * 作成日           : 2026.5.1
+	 */
+	public static boolean isLeap(int year) {
+		/*西暦yearが「4で割り切れるかつ100で割り切れない」または「400で割り切れる」
+		 *という条件を満たせば、うるう年であると判定してtrueを返す
+		 */
+		return (year % 4 == 0 && year % 100 != 0 || year % 400 == 0);
+	}
+	/**
+	 * 関数名           : isValid
+	 * メソッドの説明   : 指定された年月日が実在するか判定する
+	 * パラメータ       : year, month, date
+	 * 返り値           : 正しければtrue、不正ならfalse
+	 * 作成者           : 玉澤一輝
+	 * 作成日           : 2026.5.1
+	 */
+	public static boolean isValid(int year, int month, int date) {
+		//もしyearが1より小さい場合
+		if (year < 1) {
+			//falseを返却
+			return false;
+		}
+		//もしmonthが1より小さいまたはmonthが12より大きい場合
+		if (month < 1 || month > 12) {
+			//falseを返却
+			return false;
+		}
+		//インスタンスの変数lastDayに代入する
+		int lastDay = lastDayOfMonth(year, month);
+		//もしdateが1より小さいまたはdateがlastDayより大きい場合
+		if (date < 1 || date > lastDay) {
+			//falseを返却
+			return false;
+		}
+		//trueを返却
+		return true;
 	}
 	/**
 	 * 関数名           : toString
