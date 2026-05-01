@@ -20,9 +20,10 @@ public class Day4 {
 	private int dateNumber = 1;
 
 	/**
-	 * コンストラクタ   : Day
+	 * コンストラクタ   : Day4
 	 * コンストラクタの説明   : 指定された年月日、または他のDayインスタンスを基に初期化を行う
 	 * 							年が0の場合は1年として処理する
+	 * 							他のDay4インスタンスを基に複製を作成する
 	 * パラメータの説明       : 年、年月、年月日、Dayインスタンス
 	 * 返り値                 : なし
 	 * 作成者                 : 玉澤一輝
@@ -45,14 +46,6 @@ public class Day4 {
 		//年月指定のコンストラクタを呼び出して処理
 		this(year, month); this.dateNumber = date;
 	}
-	/**
-	 * コンストラクタ         : Day4
-	 * コンストラクタの説明   : 他のDay4インスタンスを基に複製を作成する
-	 * パラメータ             : d
-	 * 返り値                 : なし
-	 * 作成者                 : 玉澤一輝
-	 * 作成日                 : 2026.5.1
-	 */
 	public Day4(Day4 d) {
 		this(d.yearNumber, d.monthNumber, d.dateNumber);
 	}
