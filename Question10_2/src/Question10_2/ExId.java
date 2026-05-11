@@ -7,7 +7,7 @@ package Question10_2;
  */
 public class ExId {
 	//何番までの識別番号を与えたかを記録する
-	static int counterValue = 0;
+	private static int counterValue = 0;
 	//増分値の初期値を1に設定する
 	private static int specifiedIncrement = 1;
 	//個々のインスタンスが持つ識別番号
