@@ -51,6 +51,11 @@ public class MinMax{
 	 * 作成日           : 2026.04.30
 	 */
 	public static int min(int[] arrayNumber){
+		//もしarrayNumberがnullまたはarrayNumber.lengthが0の場合
+		if (arrayNumber == null || arrayNumber.length == 0) {
+			//"配列がnull、または空です。"と表示して改行する
+			System.out.println("配列がnull、または空です。");
+		}
 		//変数minimumNumberにarrayNumber[0]を代入する
 		int minimumNumber = arrayNumber[0];
 		//変数iが1から始めて1ずつ増やしていき要素の数繰り返す
@@ -108,6 +113,11 @@ public class MinMax{
 	 * 作成日           : 2026.04.30
 	 */
 	public static int max(int[] arrayNumber) {
+		//もしarrayNumberがnullまたはarrayNumber.lengthが0の場合
+		if (arrayNumber == null || arrayNumber.length == 0) {
+			//"配列がnull、または空です。"と表示して改行する
+			System.out.println("配列がnull、または空です。");
+		}
 		//変数maxNumberにarrayNumber[0]を代入する
 		int maxNumber = arrayNumber[0];
 		//変数iが1から始めて1ずつ増やしていき要素の数繰り返す
@@ -120,5 +130,5 @@ public class MinMax{
 		//最大値を返す
 		return maxNumber;
 	}
-
 }
+

@@ -33,7 +33,6 @@ public class Question10_3 {
 		System.out.print("thirdNumberの値：");
 		//thirdNumberに入力した値を代入する
 		int thirdNumber = STANDARD_INPUT.nextInt();
-
 		//"配列の要素数："を表示する
 		System.out.print("配列の要素数：");
 		//arrayNumberに入力した値を代入する
