@@ -10,11 +10,11 @@ import java.util.GregorianCalendar;
  */
 public class Day5 {
 	//年の初期化
-	private int yearNumber = 1;
+	private int yearNumber;
 	//月の初期化
-	private int monthNumber = 1;
+	private int monthNumber;
 	//日付の初期化
-	private int dateNumber = 1;
+	private int dateNumber;
 
 	/**
 	 * コンストラクタ 		: Day5
@@ -35,54 +35,50 @@ public class Day5 {
 		//実行時の「日」を取得してフィールドに代入
 		this.dateNumber = todayDate.get(java.util.Calendar.DATE);
 	}
-	//年を指定してを受け取って初期化
+	/**
+	 * コンストラクタ 		: Day5
+	 * コンストラクタの説明 : 引数で受け取った年、およびデフォルトの月日（1月1日）で初期化を行う
+	 * パラメータの説明 	: 年（year）
+	 * 返り値 				: なし
+	 * 作成者				: 玉澤一輝
+	 * 作成日 				: 2026.5.12
+	 */
 	public Day5(int year) {
 		//月と日は1とする
 		this(year, 1, 1);
 	}
-	//年と月を指定する
+	/**
+	 * コンストラクタ 		: Day5
+	 * コンストラクタの説明 : 引数で受け取った年・月、およびデフォルトの日（1日）で初期化を行う
+	 * パラメータの説明 	: 年、月(year,month)
+	 * 返り値 				: なし
+	 * 作成者				: 玉澤一輝
+	 * 作成日 				: 2026.5.12
+	 */
 	public Day5(int year, int month) {
 		//日は1とする
 		this(year, month, 1);
 	}
-	//年と月と日を指定する
+	/**
+	 * コンストラクタ 		: Day5
+	 * コンストラクタの説明 : 引数で受け取った年・月・日の値を用いて初期化を行う
+	 * パラメータの説明 	: 年、月、日(year,month,date)
+	 * 返り値 				: なし
+	 * 作成者				: 玉澤一輝
+	 * 作成日 				: 2026.5.12
+	 */
 	public Day5(int year, int month, int date) {
-		//年が1より小さい場合は1にする
-		this.yearNumber = (year < 1) ? 1 : year;
-		//もし月が1より小さい場合
-		if (month < 1) {
-			//1月とする
-			this.monthNumber = 1;
-		}
-		//月が12より大きい場合
-		else if (month > 12) {
-			//12とする
-			this.monthNumber = 12;
-		}
-		//その他の場合
-		else {
-			//そのままの月にする
-			this.monthNumber = month;
-		}
-		//インスタンスの変数lastDateに代入する
-		int lastDate = lastDayOfMonth(this.yearNumber, this.monthNumber);
-		//もし日が1より小さい場合
-		if (date < 1) {
-			//日を1とする
-			this.dateNumber = 1;
-		}
-		//もし日がその月の最終日より大きい場合
-		else if (date > lastDate) {
-			//日を最終日と同じにする
-			this.dateNumber = lastDate;
-		}
-		//その他の場合
-		else {
-			//そのまま日とする
-			this.dateNumber = date;
-		}
+		//指定された引数（年・月・日）をセットし、範囲外の場合は適切な値に補正する
+		set(year, month, date);
 	}
-
+	/**
+	 * コンストラクタ 		: Day5
+	 * コンストラクタの説明 : 既存のDay5インスタンスの内容をコピーして新しいインスタンスを生成する
+	 * パラメータの説明 	: コピー元のインスタンス（d）
+	 * 返り値 				: なし
+	 * 作成者				: 玉澤一輝
+	 * 作成日 				: 2026.5.12
+	 */
 	public Day5(Day5 d) {
 		//引数として受け取ったDay5インスタンスの年月日を自身のコンストラクタに渡して初期化
 		this(d.yearNumber, d.monthNumber, d.dateNumber);
@@ -123,57 +119,25 @@ public class Day5 {
 		//日にちを返却
 		return dateNumber;
 	}	
-	/**
-	 * 関数名 			: setYear
-	 * メソッドの説明 	: 年の値を更新する
-	 * パラメータの説明 : 年
-	 * 返り値 			: なし
-	 * 作成者 			: 玉澤一輝
-	 * 作成日 			: 2026.5.1
-	 */
-	public void setYear(int year) {
-		//yearNumberに引数の値を代入する
-		this.yearNumber = year;
-	}
-	/**
-	 * 関数名 			: setMonth
-	 * メソッドの説明 	: 月の値を更新する
-	 * パラメータの説明 : 月
-	 * 返り値 			: なし
-	 * 作成者 			: 玉澤一輝
-	 * 作成日 			: 2026.5.1
-	 */
-	public void setMonth(int month) {
-		//monthNumberに引数の値を代入する
-		this.monthNumber = month;
-	}
-	/**
-	 * 関数名 			: setDate
-	 * メソッドの説明 	: 日付の値を更新する
-	 * パラメータの説明 : 日付
-	 * 返り値 			: なし
-	 * 作成者 			: 玉澤一輝
-	 * 作成日 			: 2026.5.1
-	 */
-	public void setdate(int date) {
-		//setDateに引数の値を代入する
-		this.dateNumber = date;
-	}
+
 	/**
 	 * 関数名 			: set
 	 * メソッドの説明 	: 年月日をまとめて更新する
-	 * パラメータの説明 : 年、月、日
+	 * パラメータの説明 : 年、月、日(year,month,date)の設定
+	 * 					　範囲外は適切な値に調節する
 	 * 返り値 			: なし
 	 * 作成者 			: 玉澤一輝
 	 * 作成日 			: 2026.5.1
 	 */
 	public void set(int year, int month, int date) {
-		//yearNumberに引数の値を代入する
-		this.yearNumber = year;
-		//monthNumberに引数の値を代入する
-		this.monthNumber = month;
-		//dateNumberに引数の値を代入する
-		this.dateNumber = date;
+		//年が1未満の場合は1年に補正する
+		this.yearNumber = (year < 1) ? 1 : year;
+		//月が1〜12の範囲に収まるよう調整する
+		this.monthNumber = (month < 1) ? 1 : (month > 12) ? 12 : month;
+		//決定した年・月から、その月の最終日（28〜31日）を取得する
+		int lastDay = lastDayOfMonth(this.yearNumber, this.monthNumber);
+		//日が1〜最終日の範囲に収まるよう調整する
+		this.dateNumber = (date < 1) ? 1 : (date > lastDay) ? lastDay : date;
 	}
 	/**
 	 * 関数名 			: dayOfWeek
@@ -230,7 +194,7 @@ public class Day5 {
 	 * 作成者 			: 玉澤一輝
 	 * 作成日 			: 2026.5.1
 	 */
-	private static int[]eachMonthDays = 
+	private static final int[]EACH_MONTH_DAYS = 
 		{31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 
 	/**
@@ -268,7 +232,7 @@ public class Day5 {
 			return 29;
 		}
 		//eachMonthDays[month-1]を返却
-		return eachMonthDays[month - 1];
+		return EACH_MONTH_DAYS[month - 1];
 	}
 
 	/**
@@ -306,7 +270,7 @@ public class Day5 {
 	/**
 	 * 関数名 			: compareTo
 	 * メソッドの説明 	: 他の日付との前後関係を判定する
-	 * パラメータ 			: 比較対象の日付
+	 * パラメータ 		: 比較対象の日付
 	 * 返り値 			: 前なら-1、同じなら0、後なら1
 	 * 作成者 			: 玉澤一輝
 	 * 作成日 			: 2026.5.1
@@ -314,31 +278,45 @@ public class Day5 {
 	public int compareTo(Day5 oneDay) {
 		//もしyearNumberがoneDay.yearNumberより小さい場合
 		if (yearNumber < oneDay.yearNumber) {
+			//"比較対象より前の日です"と表示して改行する
+			System.out.println("比較対象より前の日です");
 			//-1を返却する
 			return -1;
 			//もしyearNumberがoneDay.yearNumberより大きい場合
 		}else if (yearNumber > oneDay.yearNumber) { 
+			//"比較対象より後の日です"と表示して改行する
+			System.out.println("比較対象より後の日です");
 			//1を返却する
 			return 1;
 		}
 		//もしmonthNumberがoneDay.monthNumberより小さい場合
 		if (monthNumber < oneDay.monthNumber) {
+			//"比較対象より前の日です"と表示して改行する
+			System.out.println("比較対象より前の日です");
 			//-1を返却する
 			return -1;
 			//もしmonthNumberがoneDay.monthNumberより大きい場合
 		}else if (monthNumber > oneDay.monthNumber) { 
+			//"比較対象より後の日です"と表示して改行する
+			System.out.println("比較対象より後の日です");
 			//1を返却する
 			return 1;
 		}
 		//もしdateNumberがoneDay.dateNumberより小さい場合
 		if (dateNumber < oneDay.dateNumber) { 
+			//"比較対象より前の日です"と表示して改行する
+			System.out.println("比較対象より前の日です");
 			//-1を返却する
 			return -1;
 			//もしdateNumberがoneDay.dateNumberより大きい場合
 		}else if (dateNumber > oneDay.dateNumber) {
+			//"比較対象より後の日です"と表示して改行する
+			System.out.println("比較対象より後の日です");
 			//1を返却する
 			return 1;
 		}
+		//"比較対象と同日です"と表示して改行する
+		System.out.println("比較対象と同日です");
 		//0を返却する
 		return 0;
 	}
@@ -436,8 +414,8 @@ public class Day5 {
 				yearNumber--;
 				//monthNumberに12を代入する
 				monthNumber = 12;
-				//dateNumberに31を代入する
-				dateNumber = 31;
+				//lastDayOfMonthを呼び出す
+				dateNumber = lastDayOfMonth(yearNumber, monthNumber);
 			}
 		}
 	}
@@ -525,7 +503,7 @@ public class Day5 {
 	 * 関数名 			: beforeDayN
 	 * メソッドの説明 	: n日前の日付を返却する
 	 * パラメータ 		: n日前
-	 * 返り値 			: n日後の日付
+	 * 返り値 			: n日前の日付
 	 * 作成者 			: 玉澤一輝
 	 * 作成日			: 2026.5.1
 	 */

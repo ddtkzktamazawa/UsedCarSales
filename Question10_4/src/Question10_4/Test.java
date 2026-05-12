@@ -36,7 +36,7 @@ public class Test {
 		System.out.println("\n--- 比較メソッド ---");
 		//"dayFirstとdaySecondを比較(インスタンス):dayFirst.compareTo(daySecond)"と表示して改行する
 		System.out.println("dayFirst と daySecond を比較(インスタンス): " + dayFirst.compareTo(daySecond));
-		//"dayFirstと aySecondを比較(クラス):Day5.compare(dayFirst, daySecond)"と表示して改行する
+		//"dayFirstとdaySecondを比較(クラス):Day5.compare(dayFirst, daySecond)"と表示して改行する
 		System.out.println("dayFirst と daySecond を比較(クラス): " + Day5.compare(dayFirst, daySecond));
 		//"--- 日付の操作（1日単位） ---"と表示して改行する
 		System.out.println("\n--- 日付の操作（1日単位） ---");
@@ -72,6 +72,33 @@ public class Test {
 		dayFirst.retreatDayN(afterNDays);
 		//"結果:dayFirst"と表示して改行する
 		System.out.println("結果: " + dayFirst);
+		//"日付を入力してください。"と表示して改行する
+		System.out.println("\n日付を入力してください。");
+		//"年："と表示する
+		System.out.print("年："); 
+		//変数yearNumberに入力した値を代入する
+		int yearNumber = STANDARD_INPUT.nextInt();
+		//"月："と表示する
+		System.out.print("月："); 
+		//変数monthNumberに入力した値を代入する
+		int monthNumber = STANDARD_INPUT.nextInt();
+		//"日："と表示する
+		System.out.print("日："); 
+		//変数dateNumberに入力した値を代入する
+		int dateNumber = STANDARD_INPUT.nextInt();
+		//入力された年月日を基に比較対象となるDay5インスタンス（userDay）を生成する
+		Day5 userDay = new Day5(yearNumber, monthNumber, dateNumber);
+		//ンストラクタを呼び出し現在の日付（実行当日）を持つインスタンスを生成する
+		Day5 today = new Day5();
+		//"入力された日付:userDay"と表示して改行する
+		System.out.println("入力された日付: " + userDay);
+		//"今日の日付：today"と表示して改行する
+		System.out.println("今日の日付     : " + today);
+		//compareToメソッドにより入力された日付と今日の日付の前後関係を判定・表示する
+		userDay.compareTo(today);
+		//nextDayメソッドで生成された「翌日のインスタンス」を変数nextDayObjectに保持する
+		Day5 nextDayObject = userDay.nextDay(); 
+		//"翌日の日付:nextDayObject"と表示して改行する
+		System.out.println("翌日の日付: " + nextDayObject);
 	}
-
 }
