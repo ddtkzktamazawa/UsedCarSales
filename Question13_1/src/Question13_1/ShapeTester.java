@@ -25,7 +25,7 @@ public class ShapeTester {
 		int numberValue = STANDARD_INPUT.nextInt();
 		//抽象クラスShape型の配列を生成する
 		Shape[] p = new Shape[numberValue];
-		//変数iが1から始めて1ずつ増やしていき要素の数繰り返す
+		//変数iが0から始めて1ずつ増やしていき要素の数繰り返す
 		for (int i = 0; i < numberValue; i++) {
 			//"(i + 1)番の図形の種類（1…点／2…水平直線／3…垂直直線／4…長方形）："を表示する
 			System.out.print((i + 1) + "番の図形の種類（1…点／2…水平直線／3…垂直直線／4…長方形）：");
