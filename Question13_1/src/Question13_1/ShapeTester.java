@@ -15,6 +15,8 @@ public class ShapeTester {
 	 * 					  それらの一括描画を行う
 	 * パラメータ       : なし
 	 * 返り値           : なし
+	 * 作成者            : 玉澤一輝
+	 * 作成日            : 2026/05/11
 	 */
 	public static void main(String[] args) {
 		//キーボードで入力した値を入れる変数を作る
