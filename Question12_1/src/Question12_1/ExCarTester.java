@@ -38,9 +38,6 @@ public class ExCarTester {
 		System.out.println("--- 走行距離の確認 ---");
 		//"現在の総走行距離：myCar.getTotalMileage()km"と表示して改行する
 		System.out.println("現在の総走行距離　：" + myCar.getTotalMileage() + "km");
-
-		//"移動前の総走行距離：myCar.getTotalMileage()km"と表示して改行する
-		System.out.println("移動前の総走行距離：" + myCar.getTotalMileage() + "km");
 		//double型の変数dxに30.0を代入する
 		double dx = 30.0;
 		//double型の変数dyに40.0を代入する

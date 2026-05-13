@@ -21,9 +21,9 @@ public class ExCar extends Car2 {
 	 * 作成者           	  : 玉澤一輝
 	 * 作成日           	  : 2026.05.11
 	 */
-	public ExCar(String nameInformation, int widthInformation, int heightInformation, int lengthInformation, double fuelInformation, Day7 purchaseDay) {
+	public ExCar(String name, int width, int height, int length, double fuel, Day7 purchaseDay) {
 		//親クラスのコンストラクタを呼び出す
-		super(nameInformation, widthInformation, heightInformation, lengthInformation, fuelInformation, purchaseDay);
+		super(name, width, height, length, fuel, purchaseDay);
 		//総走行距離を0.0で新しく作成する
 		this.totalMileage = 0.0;
 	}
@@ -48,6 +48,7 @@ public class ExCar extends Car2 {
 	 * 作成者           : 玉澤一輝
 	 * 作成日           : 2026.05.11
 	 */
+	@Override
 	public boolean move(double dx, double dy) {
 		//moveメソッドを呼び出す
 		boolean success = super.move(dx, dy);
