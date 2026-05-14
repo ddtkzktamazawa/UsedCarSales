@@ -41,7 +41,7 @@ public class SkinnableRobotPetTester {
 		myRobot.printSkin();
 		//区切り
 		System.out.println("--------------------------------");
-		//変数Skinnableにインスタンスを代入
+		//インタフェース型の変数に代入する
 		Skinnable skinChange = myRobot;
 		//スキンを青に変更する
 		skinChange.changeSkin(Skinnable.BLUE);
