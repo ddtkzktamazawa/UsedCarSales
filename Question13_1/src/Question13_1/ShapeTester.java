@@ -26,7 +26,7 @@ public class ShapeTester {
 		//変数numberValueに入力した値を代入する
 		int numberValue = STANDARD_INPUT.nextInt();
 		//抽象クラスShape型の配列を生成する
-		Shape[] p = new Shape[numberValue];
+		Shape[] shapeArray = new Shape[numberValue];
 		//変数iが0から始めて1ずつ増やしていき要素の数繰り返す
 		for (int i = 0; i < numberValue; i++) {
 			//"(i + 1)番の図形の種類（1…点／2…水平直線／3…垂直直線／4…長方形）："を表示する
@@ -36,7 +36,7 @@ public class ShapeTester {
 			// 入力された番号に応じて生成する図形の種類を分岐させる
 			switch (typeNumber) {
 			//点の生成をする
-			case 1: p[i] = new Point(); 
+			case 1: shapeArray[i] = new Point(); 
 			//抜ける
 			break;
 			//水平直線の生成
@@ -48,7 +48,7 @@ public class ShapeTester {
 				//変数lengthValueに入力した値を代入する
 				int lengthValue = STANDARD_INPUT.nextInt();
 				// 三項演算子を用いてタイプに応じた直線のインスタンスを生成する
-				p[i] = (typeNumber == 2) ? new HorzLine(lengthValue) : new VirtLine(lengthValue);
+				shapeArray[i] = (typeNumber == 2) ? new HorzLine(lengthValue) : new VirtLine(lengthValue);
 				//抜ける
 				break;
 				//長方形の生成
@@ -62,17 +62,17 @@ public class ShapeTester {
 				//変数heigthValueに入力した値を代入する
 				int heigthValue = STANDARD_INPUT.nextInt();
 				//入力された幅と高さを用いてRectangle（長方形）のインスタンスを生成する
-				p[i] = new Rectangle(widthValue, heigthValue);
+				shapeArray[i] = new Rectangle(widthValue, heigthValue);
 				//抜ける
 				break;
 			}
 		}
 		//拡張for文を用いて配列内の図形を順番に取り出して描画を実行する
-		for (Shape s : p) {
+		for (Shape shapeElement : shapeArray) {
 			//もし配列の要素がnullでない場合
-			if (s != null) {
+			if (shapeElement != null) {
 				//sが指す具体的なインスタンスのdraw/toStringが呼ばれる
-				s.print();
+				shapeElement.print();
 				//改行する
 				System.out.println();
 			}
