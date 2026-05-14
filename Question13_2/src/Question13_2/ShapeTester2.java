@@ -60,13 +60,13 @@ public class ShapeTester2 {
 		//"--- 描画結果 ---"を表示して改行する
 		System.out.println("\n--- 描画結果 ---");
 		//配列内の図形を順番に取り出して描画を実行する
-		for (Shape2 s : shapeArray) {
+		for (Shape2 shapeElement : shapeArray) {
 			//もし配列の要素がnullでない場合
-			if (s != null) {
+			if (shapeElement != null) {
 				//toString()を呼び出しクラス名と長さを表示して改行する
-				System.out.println(s.toString());
+				System.out.println(shapeElement.toString());
 				//各クラスでオーバーライドした draw() を実行する
-				s.draw();
+				shapeElement.draw();
 				//改行する
 				System.out.println();
 			}
