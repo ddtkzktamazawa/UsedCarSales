@@ -2,12 +2,18 @@ package Question15_2;
 import java.util.Scanner;
 /**
  * クラス名     : characterEncoding
- * 概要			: 入力した文字列を読み込んで文字コードを表示する
+ * 概要			: 入力した文字列を読み込みその各文字の16進数の文字コードを表示する
  * @author 		: 玉澤 一輝
  * 作成日		: 2026.05.14
  */
 public class characterEncoding {
-
+	/**
+	 * 関数名           : main
+	 * メソッドの説明   : キーボードから入力した文字列の各文字を走査し、文字コードを表示する。
+	 * @param args     : コマンドライン引数
+	 * @return         : なし
+	 * 作成日           : 2026.05.14
+	 */
 	public static void main(String[] args) {
 		//キーボードで入力した値を入れる変数を作る
 		Scanner STANDARD_INPUT = new Scanner(System.in);
