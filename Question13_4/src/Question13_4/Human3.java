@@ -3,7 +3,7 @@ package Question13_4;
 /*
  * クラス名          : Human3
  * 概要              : 人間の情報を管理するクラス
- * 作成者            : 玉澤一輝
+ * @author           : 玉澤一輝
  * 作成日            : 2026.5.13
  */
 public class Human3 {
@@ -18,9 +18,9 @@ public class Human3 {
 	/**
 	 * コンストラクタ         : Human3
 	 * コンストラクタの説明   : 名前・身長・体重を初期化してインスタンスを生成する
-	 * パラメータの説明       : 名前、身長、体重
-	 * 返り値			      : なし
-	 * 作成者                 : 玉澤一輝
+	 * @param       		  : 名前、身長、体重
+	 * @return			      : なし
+	 * @author               : 玉澤一輝
 	 * 作成日                 : 2026.5.13
 	 */
 	public Human3(String nameInformation, double heightInformation, double weightInformation, Day8 birthdayInformation) {
@@ -37,9 +37,9 @@ public class Human3 {
 	/**
 	 * 関数名           : getName
 	 * メソッドの説明   : 名前のフィールド値を返却する
-	 * パラメータの説明 : なし
-	 * 返り値           : 名前
-	 * 作成者           : 玉澤一輝
+	 * @param 			: なし
+	 * @return         	: 名前
+	 * @author         	: 玉澤一輝
 	 * 作成日           : 2026.5.13
 	 */
 	public String getName() {
@@ -50,9 +50,9 @@ public class Human3 {
 	/**
 	 * 関数名           : getHeight
 	 * メソッドの説明   : 身長のフィールド値を返却する
-	 * パラメータの説明 : なし
-	 * 返り値           : 身長
-	 * 作成者           : 玉澤一輝
+	 * @param 			: なし
+	 * @return         	: 身長
+	 * @author         	: 玉澤一輝
 	 * 作成日           : 2026.5.13
 	 */
 	public double getHeight() {
@@ -63,9 +63,9 @@ public class Human3 {
 	/**
 	 * 関数名           : getWeight
 	 * メソッドの説明   : 体重のフィールド値を返却する
-	 * パラメータの説明 : なし
-	 * 返り値           : 体重
-	 * 作成者           : 玉澤一輝
+	 * @param 			: なし
+	 * @return         	: 体重
+	 * @author         	: 玉澤一輝
 	 * 作成日           : 2026.5.13
 	 */
 	public double getWeight() {
@@ -75,9 +75,9 @@ public class Human3 {
 	/**
 	 * 関数名           : getBirthDay
 	 * メソッドの説明   : 誕生日のフィールド値を返却する
-	 * パラメータの説明 : なし
-	 * 返り値           : 誕生日
-	 * 作成者           : 玉澤一輝
+	 * @param 			: なし
+	 * @return         	: 誕生日
+	 * @author         	: 玉澤一輝
 	 * 作成日           : 2026.5.13
 	 */
 	public Day8 getBirthDay() {
@@ -87,9 +87,9 @@ public class Human3 {
 	/**
 	 * 関数名           : toString
 	 * メソッドの説明   : 人間のプロフィール情報を文字列として返却する
-	 * パラメータの説明 : なし
-	 * 返り値           : 名前、身長、体重、誕生日を含む整形済み文字列
-	 * 作成者           : 玉澤一輝
+	 * @param 			: なし
+	 * @return         	: 名前、身長、体重、誕生日を含む整形済み文字列
+	 * @author         	: 玉澤一輝
 	 * 作成日           : 2026.5.13
 	 */
 	public String toString() {
@@ -101,9 +101,9 @@ public class Human3 {
 	/**
 	 * 関数名           : printProfile
 	 * メソッドの説明   : インスタンスが持つプロパティ（名前・身長・体重）を表示する
-	 * パラメータの説明 : なし
-	 * 返り値           : なし
-	 * 作成者           : 玉澤一輝
+	 * @param 			: なし
+	 * @return         	: なし
+	 * @author         	: 玉澤一輝
 	 * 作成日           : 2026.5.13
 	 */
 	public void printProfile() {

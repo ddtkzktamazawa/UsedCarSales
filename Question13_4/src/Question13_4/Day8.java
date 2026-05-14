@@ -6,7 +6,7 @@ package Question13_4;
  * 概要              : 日付情報を管理し曜日計算や文字列表現の提供を行うクラス
  * 					　 5種類のコンストラクタによる初期化とカプセル化（ゲッタ・セッタ）を
  * 					　 実装している
- * 作成者            : 玉澤一輝
+ * @author           : 玉澤一輝
  * 作成日            : 2026.5.13
  */
 public class Day8 {
@@ -21,9 +21,9 @@ public class Day8 {
 	 * コンストラクタ   : Day
 	 * コンストラクタの説明   : 指定された年月日、または他のDayインスタンスを基に初期化を行う
 	 * 							年が0の場合は1年として処理する
-	 * パラメータの説明       : 年、年月、年月日、Dayインスタンス
-	 * 返り値                 : なし
-	 * 作成者                 : 玉澤一輝
+	 * @param				  : 年、年月、年月日、Dayインスタンス
+	 * @return               : なし
+	 * @author               : 玉澤一輝
 	 * 作成日                 : 2026.5.13
 	 */
 	//フィールドの初期値でインスタンスを生成する
@@ -51,9 +51,9 @@ public class Day8 {
 	/**
 	 * 関数名           : getYear
 	 * メソッドの説明   : 年のフィールド値を返却する
-	 * パラメータの説明 : なし
-	 * 返り値           : 年
-	 * 作成者           : 玉澤一輝
+	 * @param			: なし
+	 * @return         	: 年
+	 * @author         	: 玉澤一輝
 	 * 作成日           : 2026.5.13
 	 */
 	public int getYear() {
@@ -63,9 +63,9 @@ public class Day8 {
 	/**
 	 * 関数名           : getMonth
 	 * メソッドの説明   : 月のフィールド値を返却する
-	 * パラメータの説明 : なし
-	 * 返り値           : 月
-	 * 作成者           : 玉澤一輝
+	 * @param			: なし
+	 * @return         	: 月
+	 * @author         	: 玉澤一輝
 	 * 作成日           : 2026.5.13
 	 */
 	public int getMonth() {
@@ -75,9 +75,9 @@ public class Day8 {
 	/**
 	 * 関数名           : getDate
 	 * メソッドの説明   : 日にちのフィールド値を返却する
-	 * パラメータの説明 : なし
-	 * 返り値           : 日にち
-	 * 作成者           : 玉澤一輝
+	 * @param			: なし
+	 * @return         	: 日にち
+	 * @author         	: 玉澤一輝
 	 * 作成日           : 2026.5.13
 	 */
 	public int getDate() {
@@ -87,9 +87,9 @@ public class Day8 {
 	/**
 	 * 関数名           : setYear
 	 * メソッドの説明   : 年の値を更新する
-	 * パラメータの説明 : 年
-	 * 返り値           : なし
-	 * 作成者           : 玉澤一輝
+	 * @param			: 年
+	 * @return         	: なし
+	 * @author         	: 玉澤一輝
 	 * 作成日           : 2026.5.13
 	 */
 	public void setYear(int year) {
@@ -99,9 +99,9 @@ public class Day8 {
 	/**
 	 * 関数名           : setMonth
 	 * メソッドの説明   : 月の値を更新する
-	 * パラメータの説明 : 月
-	 * 返り値           : なし
-	 * 作成者           : 玉澤一輝
+	 * @param			: 月
+	 * @return         	: なし
+	 * @author         	: 玉澤一輝
 	 * 作成日           : 2026.5.13
 	 */
 	public void setMonth(int month) {
@@ -111,9 +111,9 @@ public class Day8 {
 	/**
 	 * 関数名           : setDate
 	 * メソッドの説明   : 日付の値を更新する
-	 * パラメータの説明 : 日付
-	 * 返り値           : なし
-	 * 作成者           : 玉澤一輝
+	 * @param			: 日付
+	 * @return         	: なし
+	 * @author         	: 玉澤一輝
 	 * 作成日           : 2026.5.13
 	 */
 	public void setdate(int date) {
@@ -123,9 +123,9 @@ public class Day8 {
 	/**
 	 * 関数名           : set
 	 * メソッドの説明   : 年月日をまとめて更新する
-	 * パラメータの説明 : 年、月、日
-	 * 返り値           : なし
-	 * 作成者           : 玉澤一輝
+	 * @param		 	: 年、月、日
+	 * @return         	: なし
+	 * @author         	: 玉澤一輝
 	 * 作成日           : 2026.5.13
 	 */
 	public void set(int year, int month, int date) {
@@ -139,9 +139,9 @@ public class Day8 {
 	/**
 	 * 関数名           : dayOfWeek
 	 * メソッドの説明   : 曜日を算出する
-	 * パラメータの説明 : なし
-	 * 返り値           : 0(日曜日)～6(土曜日)の整数値
-	 * 作成者           : 玉澤一輝
+	 * @param 			: なし
+	 * @return         	: 0(日曜日)～6(土曜日)の整数値
+	 * @author         	: 玉澤一輝
 	 * 作成日           : 2026.5.13
 	 */
 	public int dayOfWeek() {
@@ -162,9 +162,9 @@ public class Day8 {
 	/**
 	 * 関数名           : equalTo
 	 * メソッドの説明   : 他のDayインスタンスと日付が一致するか判定する
-	 * パラメータ       : 比較対象のDayインスタンスd
-	 * 返り値           : 一致すればtrue、しなければfalse
-	 * 作成者           : 玉澤一輝
+	 * @param       	: 比較対象のDayインスタンスd
+	 * @return         	: 一致すればtrue、しなければfalse
+	 * @author         	: 玉澤一輝
 	 * 作成日           : 2026.5.13 
 	 */
 	public boolean equalTo(Day8 d) {
@@ -174,9 +174,9 @@ public class Day8 {
 	/**
 	 * 関数名           : toString
 	 * メソッドの説明   : 現在の日付情報の文字列表現を返却する
-	 * パラメータ       : なし
-	 * 返り値           :「yyyy年mm月dd日（曜）」形式の文字列
-	 * 作成者           : 玉澤一輝
+	 * @param       	: なし
+	 * @return         	:「yyyy年mm月dd日（曜）」形式の文字列
+	 * @author         	: 玉澤一輝
 	 * 作成日           : 2026.5.13 
 	 */
 	public String toString() {
