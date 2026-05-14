@@ -23,8 +23,9 @@ public class reverseScanString {
 		//変数inputCharacterに入力した値を代入する
 		String inputCharacter = STANDARD_INPUT.next();
 		//変数iが文字数から始めて1ずつ減らしていき0まで繰り返す
-		for(int i = inputCharacter.length() - 1; i >= 0; i--)
+		for(int i = inputCharacter.length() - 1; i >= 0; i--) {
 			//"s[i]=inputCharacter.charAt(i)（入力した文字列の逆順）を表示して改行する
 			System.out.println("s[" + i + "]=" + inputCharacter.charAt(i));
+		}
 	}
 }
