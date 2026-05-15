@@ -17,8 +17,8 @@ public class JankenThreePlayers {
 	 * 作成日           : 2026.05.15
 	 */
 	public static void main(String[] args) {
-		//キーボードで入力した値を入れる変数を作る
-		Scanner STANDARD_INPUT = new Scanner(System.in);
+		//キーボードで入力した値を入れる変数を作る（プログラム全体で使用し外部から書き換えられない）
+		final Scanner STANDARD_INPUT = new Scanner(System.in);
 		//プレーヤ配列を作成する
 		Player2[] players = {
 				//自分の作成
