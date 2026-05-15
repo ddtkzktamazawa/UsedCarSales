@@ -18,8 +18,8 @@ public class SearchString {
 	 * 作成日           : 2026.05.14
 	 */
 	public static void main(String[] args) {
-		//キーボードで入力した値を入れる変数を作る
-		Scanner STANDARD_INPUT = new Scanner(System.in);
+		//キーボードで入力した値を入れる変数を作る（プログラム全体で使用し外部から書き換えられない）
+		final Scanner STANDARD_INPUT = new Scanner(System.in);
 		//"文字列s1："と表示する
 		System.out.print("文字列s1：");
 		//変数inputCharacter1に入力した値を代入する
