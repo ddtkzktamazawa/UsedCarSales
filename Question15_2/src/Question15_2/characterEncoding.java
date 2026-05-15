@@ -28,7 +28,7 @@ public class characterEncoding {
 			//文字をint型に変換して文字コードを取得する
 			int characterCode = (int) specifiedCharacter;
 			//「s[i] = 文字 (文字コード)」の形式で表示する
-			System.out.printf("s[%d]=%c(%04X)\n",i,specifiedCharacter,characterCode,characterCode);
+			System.out.printf("s[%d]=%c(%04X)\n",i,specifiedCharacter,characterCode);
 		}
 	}
 }
