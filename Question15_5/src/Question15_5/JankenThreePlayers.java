@@ -9,8 +9,12 @@ import java.util.Scanner;
  */
 public class JankenThreePlayers {
 	/**
-	 * 関数名: main
-	 * メソッドの説明: 3人のプレーヤの手を決定し勝敗判定を行う
+	 * 関数名			: main
+	 * メソッドの説明	: 3人のプレーヤの手を決定し勝敗判定を行う
+	 * @param       	: なし
+	 * @return         	: なし
+	 * @author         : 玉澤一輝
+	 * 作成日           : 2026.05.15
 	 */
 	public static void main(String[] args) {
 		//キーボードで入力した値を入れる変数を作る
