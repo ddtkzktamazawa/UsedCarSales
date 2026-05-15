@@ -60,8 +60,8 @@ public class Rectangle2 extends Shape3 implements Plane2D{
 		}
 	}
 	/**
-	 * コンストラクタ名 	: getArea
-	 * コンストラクタの説明	: 平行四辺形の面積を算出して返却する
+	 * メソッド名 			: getArea
+	 * メソッドの説明		: 平行四辺形の面積を算出して返却する
 	 * @param 				: なし
 	 * @return         		: 長方形の面積（幅×高さ）
 	 * @author         		: 玉澤一輝
