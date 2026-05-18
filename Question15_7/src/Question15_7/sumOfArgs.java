@@ -17,6 +17,13 @@ public class sumOfArgs {
 	 * 作成日           : 2026.05.15
 	 */
 	public static void main(String[] args) {
+		//もしargs.length（要素数）が0と一致する場合
+		if (args.length == 0) {
+			//"エラー：合計する数値をコマンドライン引数に指定してください。"と表示して改行する
+			System.out.println("エラー：合計する数値をコマンドライン引数に指定してください。");
+			//返却する
+			return;
+		}
 		//double型変数sumValueの初期化
 		double sumValue = 0.0;
 		//拡張for文（String型の配列）から要素を1つずつ取り出しiに格納する
