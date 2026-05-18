@@ -1,7 +1,7 @@
 package Question16_1;
 
 /**
- * クラス名         : ParseExceptionResult
+ * クラス名         : Question16_1
  * 概要				: 文字列を整数に変換する際の例外処理を扱うクラス
  * @author 			: 玉澤 一輝
  * 作成日			: 2026.05.18
