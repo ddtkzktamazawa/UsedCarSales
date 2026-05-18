@@ -17,17 +17,17 @@ public class Question16_1 {
 	 * @author			: 玉澤一輝
 	 * 作成日 			: 2026.5.18
 	 */
-	public static int tryParseInt(String value) {
+	public static int tryParseInt(String val) {
 		//変数resultValueの初期化
 		int resultValue = 0;
 		//tryブロックの実行
 		try {
 			//引数resultValueの文字列を整数に変換する
-			resultValue = Integer.parseInt(value);
+			resultValue = Integer.parseInt(val);
 			//捕捉するNumberFormatException型と与える仮引数eの宣言
 		} catch (NumberFormatException e) {
 			//"エラー：数値に変換できない値（" + value + "）が指定されました。"を表示して改行する
-			System.out.println("エラー：数値に変換できない値（" + value + "）が指定されました。");
+			System.out.println("エラー：数値に変換できない値（" + val + "）が指定されました。");
 		}
 		//resultValueを返却する
 		return resultValue;
