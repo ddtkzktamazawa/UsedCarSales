@@ -1,5 +1,4 @@
 package Question16_2;
-
 /**
  * クラス名         : ParseException
  * 概要				: 文字列から整数への変換に失敗したことを表す自作例外クラス
@@ -7,7 +6,6 @@ package Question16_2;
  * 作成日			: 2026.05.18
  */
 public class ParseException extends Throwable {
-
 	/**
 	 * コンストラクタ 		: ParseException
 	 * コンストラクタの説明 : エラーメッセージを受け取り、親クラス（Throwable）にそのまま渡す

@@ -1,5 +1,4 @@
 package Question16_2;
-
 /**
  * クラス名         : Question16_2
  * 概要				: プログラムの実行
@@ -8,7 +7,6 @@ package Question16_2;
  * 作成日			: 2026.05.18
  */
 public class Question16_2 {
-
 	/**
 	 * 関数名           : main
 	 * メソッドの説明 	: tryParseIntメソッドを呼び出しthrowされたParseExceptionを
@@ -34,7 +32,9 @@ public class Question16_2 {
 			//捕捉するParseException型と与える仮引数eの宣言
 		} catch (ParseException e) {
 			//キャッチした例外インスタンスeからエラーメッセージを取得し画面に表示して改行する
-			System.out.println(e.getMessage());
+			System.err.println(e.getMessage());
+			//スタックトレースを表示
+			e.printStackTrace();
 		}
 		//区切り
 		System.out.println("-------------------------");
@@ -49,7 +49,9 @@ public class Question16_2 {
 			//捕捉するParseException型と与える仮引数eの宣言
 		} catch (ParseException e) {
 			//キャッチした例外インスタンスeからエラーメッセージを取得し画面に表示して改行する
-			System.out.println(e.getMessage());
+			System.err.println(e.getMessage());
+			//スタックトレースを表示
+			e.printStackTrace();
 		}
 	}
 }

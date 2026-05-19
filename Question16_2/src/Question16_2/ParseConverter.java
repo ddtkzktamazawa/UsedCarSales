@@ -1,5 +1,4 @@
 package Question16_2;
-
 /**
  * クラス名         : ParseConverter
  * 概要				: 文字列の変換処理（ロジック）をするクラス
@@ -7,7 +6,6 @@ package Question16_2;
  * 作成日			: 2026.05.18
  */
 public class ParseConverter {
-
 	/**
 	 * 関数名           : tryParseInt
 	 * メソッドの説明 	: 引数で受け取った文字列を整数値に変換して返却する
