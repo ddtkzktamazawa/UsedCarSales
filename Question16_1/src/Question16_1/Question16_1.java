@@ -1,5 +1,4 @@
 package Question16_1;
-
 /**
  * クラス名         : Question16_1
  * 概要				: 文字列を整数に変換する際の例外処理を扱うクラス
@@ -7,7 +6,6 @@ package Question16_1;
  * 作成日			: 2026.05.18
  */
 public class Question16_1 {
-
 	/**
 	 * 関数名           : tryParseInt
 	 * メソッドの説明 	: 引数で受け取った文字列を整数値に変換して返却する。
@@ -27,12 +25,13 @@ public class Question16_1 {
 			//捕捉するNumberFormatException型と与える仮引数eの宣言
 		} catch (NumberFormatException e) {
 			//"エラー：数値に変換できない値（" + value + "）が指定されました。"を表示して改行する
-			System.out.println("エラー：数値に変換できない値（" + val + "）が指定されました。");
+			System.err.println("エラー：数値に変換できない値（" + val + "）が指定されました。");
+			// スタックトレースを表示
+			e.printStackTrace();
 		}
 		//resultValueを返却する
 		return resultValue;
 	}
-
 	/**
 	 * 関数名           : main
 	 * メソッドの説明 	: tryParseIntメソッドに正常な文字列と不正な文字列を渡し動作を確認する
