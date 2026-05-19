@@ -10,6 +10,14 @@ package Question15_8;
 public class CalendarDisplay {
 
 	/**
+	 * フィールド名     : EACH_MONTHS
+	 * フィールドの説明 : 1年間の月のリスト（1月〜12月）
+	 * @author 			: 玉澤一輝
+	 * 作成日 			: 2026.5.17
+	 */
+	private static final int[] EACH_MONTHS = 
+		{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12};
+	/**
 	 * 関数名           : printMonth
 	 * メソッドの説明   : 指定された年・月の1ヶ月分のカレンダーを表示する
 	 * @param      		: year(表示対象の年)、month(表示対象の月)
@@ -39,12 +47,14 @@ public class CalendarDisplay {
 			System.out.printf("%3d", beginningDay);
 
 			//もし(startIndex + beginningDay - 1)を7で割った剰余が6の場合
+			//計算結果の余りが「6」になる日は【土曜日】
 			if ((startIndex + beginningDay - 1) % 7 == 6) {
 				//改行する
 				System.out.println();
 			}
 		}
-		//もし(startIndex + beginningDay - 1)を7で割った剰余が6でない場合
+		//もし(startIndex + lastDay - 1)を7で割った剰余が6でない場合
+		//今月の最終日を出力し終えた時点でその日が【土曜日以外】だった場合の判定
 		if ((startIndex + lastDay - 1) % 7 != 6) {
 			//改行する
 			System.out.println();
@@ -75,14 +85,4 @@ public class CalendarDisplay {
 		}
 	}
 
-	/**
-	 * フィールド名     : EACH_MONTHS
-	 * フィールドの説明 : 1年間の月のリスト（1月〜12月）
-	 * @param 	     	: なし
-	 * @return         	: なし
-	 * @author 			: 玉澤一輝
-	 * 作成日 			: 2026.5.17
-	 */
-	private static final int[] EACH_MONTHS = 
-		{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12};
 }
