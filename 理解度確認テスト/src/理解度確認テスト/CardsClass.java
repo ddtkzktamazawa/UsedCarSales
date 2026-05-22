@@ -4,7 +4,7 @@ import java.util.Random;
  * クラス名			: CardsClass
  * 概要    			:トランプの各種カードを制御するクラス
  * @author 			: 玉澤 一輝
- * 作成日  			: 2025.05.19
+ * 作成日  			: 2026.05.19
  */
 public class CardsClass {
 	//トランプの山札
@@ -21,13 +21,15 @@ public class CardsClass {
 	private String[] deckArrangement;
 	//山札から次に引くカードのインデックス
 	private int deckIndex;
+	//乱数ジェネレータの生成値を入れる変数randomCardを作る
+	final Random randomCard = new Random();
 	/**
 	 * 関数名           	    : CardsClass
 	 * コンストラクタの説明     : トランプの山札を初期化しシャッフルして最初の手札を5枚引く
 	 * @param   				: なし
 	 * @return 					: なし
 	 * @author					: 玉澤一輝
-	 * 作成日           		: 2025.05.19
+	 * 作成日           		: 2026.05.19
 	 */
 	public CardsClass() {
 		//一時的な山札を作成する
@@ -71,8 +73,6 @@ public class CardsClass {
 	 * 作成日 			: 2026.5.19
 	 */
 	private void shuffleDeck() {
-		//乱数ジェネレータの生成値を入れる変数randomCardを作る
-		final Random randomCard = new Random();
 		//変数iが山札配列数-1から始めて1ずつ減らしていき0まで繰り返す
 		for(int i = deckArrangement.length - 1; i > 0; i--) {
 			//final変数indexCardに乱数を代入する（i+1）
