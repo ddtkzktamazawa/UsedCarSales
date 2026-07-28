@@ -1,27 +1,19 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Hello</title>
+    <title>イベント付与演習</title>
     <meta charset="utf-8" />
-	<script src="/js/jquery.min.js"></script>
-	<script src="/js/jquery-ui.min.js"></script>
-	<script src="/js/requestSample.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
 <body>
-    <h1>第一章 Spring Boot＋Thymeleaf で”Hello World”を作成する</h1>
+    <h1>イベント付与（アラート）</h1>
 
-    <!-- 1. ボタンを追加 -->
-    <button id="btn-hello" type="button">Hello表示</button>
+    <button id="btn-alert" type="button">アラート表示</button>
 
-    <!-- 2. 文字列を表示する場所を追加 -->
-    <div class="testArea"></div>
-
-    <!-- 3. ボタンを押した時の処理を書く -->
     <script>
         $(document).ready(function() {
-            $('#btn-hello').on('click', function() {
-                // requestGetHtml(URL, パラメータ, 表示する場所のCSSセレクタ)
-                requestGetHtml("/resthello", "", ".testArea");
+            $('#btn-alert').on('click', function() {
+                alert('Hello World');
             });
         });
     </script>
