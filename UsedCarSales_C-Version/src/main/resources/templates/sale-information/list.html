@@ -1,0 +1,82 @@
+<!-- 検索部 -->
+    <div class="search-container">
+        <form th:action="@{/sales-information/list}" method="get">
+            <input type="hidden" name="action" value="search" />
+            
+            <div class="search-row">
+                <!-- 販売都道府県 -->
+                <label>販売都道府県: 
+                    <select name="prefectureName">
+                        <option value="">すべて</option>
+                        <option th:each="pref : ${prefectureList}" 
+                                th:value="${pref}" 
+                                th:text="${pref}" 
+                                th:selected="${pref == param.prefectureName}">
+                        </option>
+                    </select>
+                </label>
+
+                <!-- 店舗 -->
+                <label>店舗: 
+                    <select name="branchName">
+                        <option value="">すべて</option>
+                        <option th:each="branch : ${branchList}" 
+                                th:value="${branch}" 
+                                th:text="${branch}" 
+                                th:selected="${branch == param.branchName}">
+                        </option>
+                    </select>
+                </label>
+            </div>
+
+            <div class="search-row">
+                <!-- メーカー -->
+                <label>メーカー: 
+                    <select name="makerName">
+                        <option value="">すべて</option>
+                        <option th:each="maker : ${makerList}" 
+                                th:value="${maker}" 
+                                th:text="${maker}" 
+                                th:selected="${maker == param.makerName}">
+                        </option>
+                    </select>
+                </label>
+
+                <!-- タイプ -->
+                <label>タイプ: 
+                    <select name="typeName">
+                        <option value="">すべて</option>
+                        <option th:each="type : ${typeNameList}" 
+                                th:value="${type}" 
+                                th:text="${type}" 
+                                th:selected="${type == param.typeName}">
+                        </option>
+                    </select>
+                </label>
+
+                <!-- 車種 -->
+                <label>車種: 
+                    <select name="carModelName">
+                        <option value="">すべて</option>
+                        <option th:each="modelName : ${carModelList}" 
+                                th:value="${modelName}" 
+                                th:text="${modelName}" 
+                                th:selected="${modelName == param.carModelName}">
+                        </option>
+                    </select>
+                </label>
+            </div>
+
+            <div class="button-group">
+                <button type="submit">検索</button>
+
+                <!-- 検索実行時のみ表示 -->
+                <span th:if="${param.action != null && param.action[0] == 'search'}">
+                    <button type="button" onclick="location.href='/sales-information/add'">追加</button>
+                    <button type="button">販売</button>
+                    <button type="button">編集</button>
+                    <button type="button">削除</button>
+                </span>
+            </div>
+        </form>
+    </div>
