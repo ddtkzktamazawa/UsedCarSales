@@ -1,82 +1,117 @@
+<!-- 画面タイトル -->
+<h1 style="font-size: 30px; font-weight: bold; margin-bottom: 15px;">販売情報管理</h1>
 <!-- 検索部 -->
-    <div class="search-container">
-        <form th:action="@{/sales-information/list}" method="get">
-            <input type="hidden" name="action" value="search" />
-            
-            <div class="search-row">
-                <!-- 販売都道府県 -->
-                <label>販売都道府県: 
-                    <select name="prefectureName">
-                        <option value="">すべて</option>
-                        <option th:each="pref : ${prefectureList}" 
-                                th:value="${pref}" 
-                                th:text="${pref}" 
-                                th:selected="${pref == param.prefectureName}">
-                        </option>
-                    </select>
-                </label>
+<div class="search-container" style="padding: 10px;">
+    <form th:action="@{/sales-information/list}" method="get">
+        <input type="hidden" name="action" value="search" />
+        
+        <!-- 1段目: 販売都道府県 / 店舗 -->
+        <div class="search-row" style="margin-bottom: 10px;">
+            <label style="margin-right: 20px;">販売都道府県 
+                <select name="prefectureName">
+                    <option value="">都道府県</option>
+                    <option th:each="pref : ${prefectureList}" 
+                            th:value="${pref}" 
+                            th:text="${pref}" 
+                            th:selected="${selectedPrefectureName != null && selectedPrefectureName == pref}">
+                    </option>
+                </select>
+            </label>
 
-                <!-- 店舗 -->
-                <label>店舗: 
-                    <select name="branchName">
-                        <option value="">すべて</option>
-                        <option th:each="branch : ${branchList}" 
-                                th:value="${branch}" 
-                                th:text="${branch}" 
-                                th:selected="${branch == param.branchName}">
-                        </option>
-                    </select>
-                </label>
-            </div>
+            <label>店舗 
+                <select name="branchName">
+                    <option value="">店舗名</option>
+                    <option th:each="branch : ${branchList}" 
+                            th:value="${branch}" 
+                            th:text="${branch}" 
+                            th:selected="${selectedBranchName != null && selectedBranchName == branch}">
+                    </option>
+                </select>
+            </label>
+        </div>
 
-            <div class="search-row">
-                <!-- メーカー -->
-                <label>メーカー: 
-                    <select name="makerName">
-                        <option value="">すべて</option>
-                        <option th:each="maker : ${makerList}" 
-                                th:value="${maker}" 
-                                th:text="${maker}" 
-                                th:selected="${maker == param.makerName}">
-                        </option>
-                    </select>
-                </label>
+        <!-- 2段目: メーカー / タイプ / 車種 / 検索ボタン（横並び） -->
+        <div class="search-row" style="display: flex; align-items: center; gap: 15px;">
+            <label>メーカー 
+                <select name="makerName">
+                    <option value="">メーカー</option>
+                    <option th:each="maker : ${makerList}" 
+                            th:value="${maker}" 
+                            th:text="${maker}" 
+                            th:selected="${selectedMakerName != null && selectedMakerName == maker}">
+                    </option>
+                </select>
+            </label>
 
-                <!-- タイプ -->
-                <label>タイプ: 
-                    <select name="typeName">
-                        <option value="">すべて</option>
-                        <option th:each="type : ${typeNameList}" 
-                                th:value="${type}" 
-                                th:text="${type}" 
-                                th:selected="${type == param.typeName}">
-                        </option>
-                    </select>
-                </label>
+            <label>タイプ 
+                <select name="typeName">
+                    <option value="">タイプ</option>
+                    <option th:each="type : ${typeNameList}" 
+                            th:value="${type}" 
+                            th:text="${type}" 
+                            th:selected="${selectedTypeName != null && selectedTypeName == type}">
+                    </option>
+                </select>
+            </label>
 
-                <!-- 車種 -->
-                <label>車種: 
-                    <select name="carModelName">
-                        <option value="">すべて</option>
-                        <option th:each="modelName : ${carModelList}" 
-                                th:value="${modelName}" 
-                                th:text="${modelName}" 
-                                th:selected="${modelName == param.carModelName}">
-                        </option>
-                    </select>
-                </label>
-            </div>
+            <label>車種
+                <select name="carModelName">
+                    <option value="">車種</option>
+                    <option th:each="modelName : ${carModelList}" 
+                            th:value="${modelName}" 
+                            th:text="${modelName}" 
+                            th:selected="${selectedCarModelName != null && selectedCarModelName == modelName}">
+                    </option>
+                </select>
+            </label>
 
-            <div class="button-group">
-                <button type="submit">検索</button>
+            <!-- 車種プルダウンのすぐ横に配置 -->
+            <button type="submit" style="padding: 2px 12px; cursor: pointer; margin-left: 10px;">検索</button>
+        </div>
+    </form>
+</div>
 
-                <!-- 検索実行時のみ表示 -->
-                <span th:if="${param.action != null && param.action[0] == 'search'}">
-                    <button type="button" onclick="location.href='/sales-information/add'">追加</button>
-                    <button type="button">販売</button>
-                    <button type="button">編集</button>
-                    <button type="button">削除</button>
-                </span>
-            </div>
-        </form>
+<!-- 一覧部（画面イメージに準拠） -->
+<div class="result-container" style="margin-top: 20px;">
+    <h2>販売中古車一覧</h2>
+
+    <!-- 操作ボタン群（一覧の上に配置） -->
+    <div class="table-buttons" style="margin-bottom: 10px;">
+        <button type="button" onclick="location.href='/sales-information/add'">追加</button>
+        <button type="button">販売</button>
+        <button type="button">編集</button>
+        <button type="button">削除</button>
     </div>
+
+    <!-- エラーメッセージ -->
+    <p th:if="${errorMessage}" th:text="${errorMessage}" style="color: red;"></p>
+
+    <!-- 検索結果テーブル（都道府県 / 販売店 / メーカー / タイプ / 車種 / 販売額） -->
+    <table border="1" th:if="${carList != null && !carList.isEmpty()}" style="width: 100%;">
+        <thead>
+            <tr>
+                <th>都道府県</th>
+                <th>販売店</th>
+                <th>メーカー</th>
+                <th>タイプ</th>
+                <th>車種</th>
+                <th>販売額</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="car : ${carList}">
+                <td th:text="${car.branch != null && car.branch.prefecture != null ? car.branch.prefecture.prefectureName : '-'}">都道府県</td>
+                <td th:text="${car.branch != null ? car.branch.branchName : '-'}">販売店</td>
+                <td th:text="${car.carModel != null && car.carModel.maker != null ? car.carModel.maker.makerName : '-'}">メーカー</td>
+                <td th:text="${car.carType != null ? car.carType.carTypeName : '-'}">タイプ</td>
+                <td th:text="${car.carModel != null ? car.carModel.carModelName : '-'}">車種</td>
+                <!-- カンマ区切りフォーマット -->
+                <td th:text="${#numbers.formatInteger(car.price, 1, 'COMMA')}">0</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p th:if="${param.action != null && (carList == null || carList.isEmpty()) && errorMessage == null}">
+        該当する中古車情報が見つかりませんでした。
+    </p>
+</div>

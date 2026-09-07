@@ -21,7 +21,7 @@ public class MakerRepository {
 	}
 	// メーカー名のリストを取得する
 	public List<String> findAllMakerNames() {
-		String sql = "SELECT DISTINCT メーカー FROM carmodel_price";
-		return jdbcTemplate.queryForList(sql, String.class);
+	    String sql = "SELECT DISTINCT maker FROM carmodelprice WHERE maker IS NOT NULL";
+	    return jdbcTemplate.queryForList(sql, String.class);
 	}
 }

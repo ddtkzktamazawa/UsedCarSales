@@ -29,16 +29,9 @@ public class SaleInformationService {
 			return Collections.emptyList();
 		}
 
-		// Repositoryで絞り込み検索を実行
-		List<UsedCarPrice> list = usedCarPriceRepository.search(
+		// Repositoryで絞り込み検索を実行し、そのまま返す
+		return usedCarPriceRepository.search(
 				prefectureName, branchName, makerName, typeName, carModelName);
-
-		// 検索した結果、該当するデータが1件もない場合
-		if (list.isEmpty()) {
-			throw new IllegalArgumentException("該当する中古車情報が存在しません。");
-		}
-
-		return list;
 	}
 
 	// 1件取得

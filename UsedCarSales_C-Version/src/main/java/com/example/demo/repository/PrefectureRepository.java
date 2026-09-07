@@ -14,8 +14,7 @@ public class PrefectureRepository {
 
 	// 都道府県名の一覧を取得する
 	public List<String> findAllPrefectureNames() {
-		// ※DBの列名が日本語の「都道府県名」になっている場合
-		String sql = "SELECT 都道府県名 FROM prefecturecode";
+		String sql = "SELECT prefecture FROM prefecturecode";
 		return jdbcTemplate.queryForList(sql, String.class);
 	}
 }

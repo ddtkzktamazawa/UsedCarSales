@@ -8,4 +8,5 @@ public class Branch {
 	private long branchId;
 	private String branchName;
 	private Dealer dealer;
+	private Prefecture prefecture;
 }

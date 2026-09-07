@@ -40,7 +40,7 @@ public class BranchRepository {
 	}
 	// 店舗名のリストを取得する
 	public List<String> findAllBranchNames() {
-		String sql = "SELECT DISTINCT 支店名 FROM shopinformation";
+		String sql = "SELECT DISTINCT branchName FROM shopinformation";
 		return jdbcTemplate.queryForList(sql, String.class);
 	}
 }

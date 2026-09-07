@@ -21,7 +21,7 @@ public class CarTypeRepository {
 	}
 	// タイプ名のリストを取得する
 	public List<String> findAllTypeNames() {
-		String sql = "SELECT DISTINCT タイプ FROM carmodel_price";
+		String sql = "SELECT DISTINCT type FROM carmodelprice WHERE type IS NOT NULL";
 		return jdbcTemplate.queryForList(sql, String.class);
 	}
 }

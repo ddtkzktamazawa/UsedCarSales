@@ -73,6 +73,11 @@ public class SaleInformationController {
 		} catch (IllegalArgumentException e) {
 			model.addAttribute("errorMessage", e.getMessage());
 		}
+		model.addAttribute("selectedPrefectureName", prefectureName);
+		model.addAttribute("selectedBranchName", branchName);
+		model.addAttribute("selectedMakerName", makerName);
+		model.addAttribute("selectedTypeName", typeName);
+		model.addAttribute("selectedCarModelName", carModelName);
 
 		// プルダウン用リストをセット
 		addDropdownListsToModel(model);
