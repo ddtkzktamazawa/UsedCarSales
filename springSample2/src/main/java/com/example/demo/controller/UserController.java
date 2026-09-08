@@ -1,5 +1,7 @@
 package com.example.demo.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -29,20 +31,21 @@ public class UserController {
 	 * @return ユーザー情報一覧画面
 	 */
 	@GetMapping(value = "/user/search")
-	public String displaySearch(Model model) {
+	public String handlecarInformation(Model model) {
 		model.addAttribute("userSearchRequest", new UserSearchRequest());
 		return "user/search";
 	}
 
 	/**
 	 * ユーザー情報検索
-	 * @param userSearchRequest リクエストデータ
+	 * @param condition リクエストデータ
 	 * @param model Model
 	 * @return ユーザー情報一覧画面
+	 * @throws Exception
 	 */
 	@RequestMapping(value = "/user/id_search", method = RequestMethod.POST)
-	public String search(@ModelAttribute UserSearchRequest userSearchRequest, Model model) {
-		User user = userService.search(userSearchRequest);
+	public String search(@ModelAttribute UserSearchRequest condition, Model model) throws Exception {
+		List<User> user = userService.searchSaleInformation(condition);
 		model.addAttribute("userinfo", user);
 		return "user/search";
 	}

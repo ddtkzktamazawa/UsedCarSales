@@ -1,47 +1,45 @@
 package com.example.demo.entity;
 
-import java.util.Date;
-
 import lombok.Data;
 
 /**
- * ユーザー情報 Entity
+ * 車の情報 Entity
  */
 @Data
 public class User {
 
-    /**
-     * ID
-     */
-    private Long id;
+	/**
+	 * ID
+	 */
+	private String saleId;
 
-    /**
-     * 名前
-     */
-    private String name;
+	/**
+	 * 店舗名
+	 */
+	private String branchName;
 
-    /**
-     * 住所
-     */
-    private String address;
+	/**
+	 * メーカー
+	 */
+	private String maker;
 
-    /**
-     * 電話番号
-     */
-    private String phone;
+	/**
+	 * タイプ
+	 */
+	private String type;
 
-    /**
-     * 更新日時
-     */
-    private Date updateDate;
+	/**
+	 * モデル
+	 */
+	private String model;
 
-    /**
-     * 登録日時
-     */
-    private Date createDate;
+	/**
+	 * 販売価格
+	 */
+	private int saleAmount;
 
-    /**
-     * 削除日時
-     */
-    private Date deleteDate;
+	/**
+	 * 元所有者ID
+	 */
+	private int formerOwnerId;
 }
